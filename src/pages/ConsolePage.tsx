@@ -475,7 +475,7 @@ export function ConsolePage() {
       },
       async ({ url }: { [key: string]: any }) => {
         const firecrawl = new FirecrawlApp({
-          apiKey: 'fc-',
+          apiKey: process.env.REACT_APP_FIRECRAWL_API_KEY || '',
         });
         const data = await firecrawl.scrapeUrl(url, {
           formats: ['markdown', 'screenshot'],
