@@ -14,5 +14,21 @@ if (!OPENAI_API_KEY) {
 
 const PORT = parseInt(process.env.PORT) || 8081;
 
-const relay = new RealtimeRelay(OPENAI_API_KEY);
+// Configure relay server with optional environment variables
+const config = {
+  connectionTimeout: parseInt(process.env.CONNECTION_TIMEOUT) || 30000,
+  heartbeatInterval: parseInt(process.env.HEARTBEAT_INTERVAL) || 30000,
+  maxMessageSize: parseInt(process.env.MAX_MESSAGE_SIZE) || 1024 * 1024,
+  logLevel: parseInt(process.env.LOG_LEVEL) || 2, // INFO by default
+};
+
+const relay = new RealtimeRelay(OPENAI_API_KEY, config);
 relay.listen(PORT);
+
+// Log configuration on startup
+console.log('Relay server configuration:');
+console.log(`- Port: ${PORT}`);
+console.log(`- Connection timeout: ${config.connectionTimeout}ms`);
+console.log(`- Heartbeat interval: ${config.heartbeatInterval}ms`);
+console.log(`- Max message size: ${config.maxMessageSize} bytes`);
+console.log(`- Log level: ${config.logLevel} (0=ERROR, 1=WARN, 2=INFO, 3=DEBUG)`);
