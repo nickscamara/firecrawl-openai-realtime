@@ -9,6 +9,39 @@ management in the browser.
 
 <img src="/readme/realtime-console-demo.png" width="800" />
 
+# Quick Start: Hello World Example
+
+Here's a simple example to get started with the OpenAI Realtime API:
+
+```javascript
+import { RealtimeClient } from '/src/lib/realtime-api-beta/index.js';
+
+// Initialize the client
+const client = new RealtimeClient({ apiKey: 'YOUR_OPENAI_API_KEY' });
+
+// Set up the session
+client.updateSession({
+  instructions: 'You are a helpful assistant.',
+  voice: 'alloy'
+});
+
+// Listen for conversation updates
+client.on('conversation.updated', ({ item, delta }) => {
+  if (delta?.transcript) {
+    console.log('Assistant:', delta.transcript);
+  }
+});
+
+// Connect and send a message
+await client.connect();
+client.sendUserMessageContent([{
+  type: 'text',
+  text: 'Hello! How are you today?'
+}]);
+```
+
+This example creates a client, connects to the Realtime API, and sends a simple text message. The assistant's response will be logged to the console.
+
 # Starting the console
 
 This is a React project created using `create-react-app` that is bundled via Webpack.
