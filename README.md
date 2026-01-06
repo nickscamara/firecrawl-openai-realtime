@@ -117,6 +117,32 @@ You can use this client yourself in any React (front-end) or Node.js project.
 For full documentation, refer to the GitHub repository, but you can use the
 guide here as a primer to get started.
 
+## Hello World Example
+
+Here's the simplest example to get started with the Realtime API:
+
+```javascript
+import { RealtimeClient } from '/src/lib/realtime-api-beta/index.js';
+
+// Create a new client with your API key
+const client = new RealtimeClient({ apiKey: process.env.OPENAI_API_KEY });
+
+// Listen for responses
+client.on('conversation.updated', ({ item, delta }) => {
+  if (delta?.transcript) {
+    console.log('Assistant:', delta.transcript);
+  }
+});
+
+// Connect and send a message
+await client.connect();
+client.sendUserMessageContent([{ type: 'text', text: 'Hello, world!' }]);
+```
+
+This minimal example creates a client, listens for responses, connects to the API, and sends a simple "Hello, world!" message.
+
+## Full Example
+
 ```javascript
 import { RealtimeClient } from '/src/lib/realtime-api-beta/index.js';
 
