@@ -1,0 +1,40 @@
+{
+  "name": "openai-realtime-mobile",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@openai/realtime-api-beta": "github:openai/openai-realtime-api-beta",
+    "react": "18.3.1",
+    "react-native": "0.76.5",
+    "react-native-audio-recorder-player": "^3.6.12",
+    "react-native-permissions": "^4.1.5",
+    "buffer": "^6.0.3",
+    "events": "^3.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@react-native/babel-preset": "0.76.5",
+    "@react-native/eslint-config": "0.76.5",
+    "@react-native/metro-config": "0.76.5",
+    "@react-native/typescript-config": "0.76.5",
+    "@types/react": "^18.3.5",
+    "@types/react-test-renderer": "^18.3.0",
+    "babel-jest": "^29.7.0",
+    "eslint": "^8.19.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.3.3",
+    "react-test-renderer": "18.3.1",
+    "typescript": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
