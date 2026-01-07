@@ -1,1 +1,3 @@
-A React-based inspector and interactive API reference for the OpenAI Realtime API with Firecrawl integration for web data - run `npm i && npm start` to get started on localhost:3000.
+A React-based inspector and interactive API reference for the OpenAI Realtime API with Firecrawl integration for web data. This tool provides a comprehensive interface for exploring and testing the Realtime API's capabilities in real-time.
+
+To get started, simply run `npm i && npm start` and navigate to localhost:3000 in your browser. The application will launch with all necessary dependencies installed and ready for you to begin experimenting with the API.
