@@ -1,0 +1,57 @@
+# OSX
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Fastlane
+ios/fastlane/report.xml
+ios/fastlane/Preview.html
+ios/fastlane/screenshots
+ios/fastlane/test_output
+
+# Android
+build/
+.gradle
+local.properties
+*.iml
+.idea
+.gradle
+local.properties
+*.hprof
+.cxx/
+*.keystore
+!debug.keystore
+
+# iOS
+ios/Pods/
+ios/build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+ios/.xcode.env.local
+
+# Misc
+.env
+.env.local
+*.orig
+*.log
+
+# Debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*

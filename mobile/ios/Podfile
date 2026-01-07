@@ -1,0 +1,17 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native/scripts/react_native_pods'
+
+platform :ios, '13.0'
+
+target 'OpenAIRealtime' do
+  use_react_native!(
+    :path => '../node_modules/react-native',
+  )
+
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-Microphone', :path => "#{permissions_path}/Microphone"
+
+  post_install do |installer|
+    react_native_post_install(installer)
+  end
+end
